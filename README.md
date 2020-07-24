@@ -1,28 +1,24 @@
 # DEFCON28-Badge
 DCZia 2020 Defcon 28 Badge
 
-Floppfinity
+PiBadge Mk3
 
 ```
- ___ _                __ _      _ _
-| __| |___ _ __ _ __ / _(_)_ _ (_) |_ _  _
-| _|| / _ \ '_ \ '_ \  _| | ' \| |  _| || |
-|_| |_\___/ .__/ .__/_| |_|_||_|_|\__|\_, |
-          |_|  |_|                    |__/
+ ____  _ ____            _              __  __ _  _______ 
+|  _ \(_) __ )  __ _  __| | __ _  ___  |  \/  | |/ /___ / 
+| |_) | |  _ \ / _` |/ _` |/ _` |/ _ \ | |\/| | ' /  |_ \ 
+|  __/| | |_) | (_| | (_| | (_| |  __/ | |  | | . \ ___) |
+|_|   |_|____/ \__,_|\__,_|\__, |\___| |_|  |_|_|\_\____/ 
+                           |___/                          
 ```
 
 ## Description
-Floppy disks, arcrylic, and leds. #90sStyle
+This year was crazy, so our origianl plan never happened. Howerever we have something in store for everyone!
 
 ## Hardware
-* Rigado BMD-340 / Nordic nRF52 Microcontroller
-* NeoPixel compatible RGB Leds
-* Custom laser cut arcrylic stuff
-* Full color things...
+* Raspberry Pi
+* Screen
+* Case
+* SD Card + DCZia Image
 
-## Setup Environemt
-Coming soon!
 
-## Build Firmware
-
-## How to Flash the Badge
