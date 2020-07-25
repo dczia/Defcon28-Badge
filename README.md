@@ -17,6 +17,15 @@ This year was crazy, so our origianl plan never happened. Howerever we have some
 
 ## Hardware
 
+General List
+Raspberry Pi Zero W
+Waveshare 1.44" Pi Zero LCD Screen
+SD Card
+
+Optional
+Any Pi
+Any supported* screen
+
 Mini Pi Badge Official Parts
 
 * WaveShare 1.44" LCD Screen 128x128 Resolution
@@ -31,4 +40,9 @@ Mini Pi Badge Official Parts
 
 * SD card 8GB minimun
   * https://www.amazon.com/Sandisk-Ultra-Micro-UHS-I-Adapter/dp/B073K14CVB/ref=sr_1_3?dchild=1&keywords=micro+sd+8&qid=1595713435&s=electronics&sr=1-3
+  
+  ## Software
+  
+  
+  ## Alternative Options
 
