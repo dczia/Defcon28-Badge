@@ -40,17 +40,17 @@ case $opt in
       ;;
     h)
       echo "Halp: -D DISPLAY_VAR " >&2
-      echo "Currently supported: "
-      echo "  WAVESHARE - Waveshare ST7735S (default)"
-      echo "  HX8357D - some random display"
-      echo "  ILI9341 - adafruit 2.8" TFT"
+      echo "Currently supported: " >&2
+      echo "  WAVESHARE - Waveshare ST7735S (default)" >&2
+      echo "  HX8357D - some random display" >&2
+      echo "  ILI9341 - adafruit 2.8 TFT" >&2
       exit 1
       ;;
   esac
 done
 
 # default case if no options
-if (( $OPTIND == 1 )); then
+if (( OPTIND == 1 )); then
    echo "Default option"
    DISPVAR="WAVESHARE"
 fi
