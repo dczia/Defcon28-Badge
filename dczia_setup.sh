@@ -85,16 +85,29 @@ echo ""
 ###############################
 #### System Setup Stuff
 ###############################
-# force_turbo=1 
 echo "$grn Checking /etc/rc.local $white"
 if ! grep -q fbcp-ili9341 /etc/rc.local; then
 	 echo "$red Updating rc.local - Enabling fbcp-ili9341 $white"
 	 sudo sed -i -e '$asudo /home/pi/Defcon28-Badge/fbcp-ili9341/build/fbcp-ili9341 &' /etc/rc.local
+
+ else
+	 echo "$blu fbcp-ili9341 driver already enabled $white"
+fi
+
+if ! grep -q autoplay /etc/rc.local; then
+         echo "$red Updating rc.local - Enabling Autoplay $white"
+         sudo sed -i -e '$a /home/pi/Defcon28-Badge/autoplay.sh' /etc/rc.local
+ else 
+	 echo "$blu Autoplay already enabled $white"
 fi
 echo ""
-if ! grep -q autoplay /etc/rc.local; then
-         echo "$red Updating rc.local - Enabling Autoplay$white"
-         sudo sed -i -e '$a /home/pi/Defcon28-Badge/autoplay.sh' /etc/rc.local
+
+echo "$grn Checking for Turbo Mode $white"
+if ! grep -q force_turbo=1 /boot/config.txt; then
+	         echo "$red Updating /boot/config.txt- Enabling Turbo $white"
+		          sudo sed -i -e '$aforce_turbo=1' /boot/config.txt
+		  else
+			  echo "$blu Turbo mode already enabled $white"
 fi
 echo ""
 
