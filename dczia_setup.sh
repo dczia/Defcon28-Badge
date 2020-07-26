@@ -21,10 +21,14 @@
 ###############################
 #### Get Command Line Options
 ###############################
-while getopts ":d::h" opt; do
+while getopts "dhD:" opt; do
 case $opt in
-    d)
-      echo "-d was triggered, Parameter: $OPTARG" >&2
+    D)
+      echo "-D was triggered, Parameter: $OPTARG" >&2
+      DISPVAR="${OPTARG}"
+      ;;
+    d) # debug
+      shopt -o -s xtrace
       ;;
     \?)
       echo "Invalid option: -$OPTARG" >&2
@@ -35,12 +39,21 @@ case $opt in
       exit 1
       ;;
     h)
-      echo "Halp: -d DISPLAY_VAR " >&2
+      echo "Halp: -D DISPLAY_VAR " >&2
+      echo "Currently supported: "
+      echo "  WAVESHARE - Waveshare ST7735S (default)"
+      echo "  HX8357D - some random display"
+      echo "  ILI9341 - adafruit 2.8" TFT"
       exit 1
       ;;
   esac
 done
 
+# default case if no options
+if (( $OPTIND == 1 )); then
+   echo "Default option"
+   DISPVAR="WAVESHARE"
+fi
 
 ###############################
 #### Setup
@@ -83,13 +96,29 @@ echo ""
 ###############################
 ### NEED TO CHECK CMD LINE OPTION AND FORK HERE FOR EACH SCREEN TYPE
 ### Adafruit PiTFT 3.5
-echo "$red Installing fbcp-ili9341 Driver $white"
-cd fbcp-ili9341 || exit
-mkdir build
-cd build || exit
-cmake -DADAFRUIT_HX8357D_PITFT=ON -DDISPLAY_ROTATE_180_DEGREES=ON -DSTATISTICS=0 -DSPI_BUS_CLOCK_DIVISOR=6 ..
-make -j
-echo ""
+
+if [[ "${DISPVAR}" == "HX8357D" ]] ; then
+    DISPTYPE="HX8357D"
+    # FIXME: probably need stuff here
+    cmake "${DISPTYPE}" -DDISPLAY_ROTATE_180_DEGREES=ON -DSTATISTICS=0 -DSPI_BUS_CLOCK_DIVISOR=6 ..
+    make -j
+    echo ""
+elif [[ "${DISPVAR}" == "ILI9341" ]] ; then
+    DISPTYPE="ILI9341"
+    echo "$red Installing fbcp-ili9341 Driver $white"
+    cd fbcp-ili9341 || exit
+    mkdir build
+    cd build || exit
+    cmake "${DISPTYPE}" -DDISPLAY_ROTATE_180_DEGREES=ON -DSTATISTICS=0 -DSPI_BUS_CLOCK_DIVISOR=6 ..
+    make -j
+    echo ""
+elif [[ "${DISPVAR}" == "WAVESHARE" ]] ; then
+    DISPTYPE="WAVESHARE_ST7735S"
+    # FIXME: probably need stuff here
+    cmake "${DISPTYPE}" -DDISPLAY_ROTATE_180_DEGREES=ON -DSTATISTICS=0 -DSPI_BUS_CLOCK_DIVISOR=6 ..
+    make -j
+    echo ""
+fi
 
 ###############################
 #### System Setup Stuff
