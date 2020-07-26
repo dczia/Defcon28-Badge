@@ -21,13 +21,22 @@
 ###############################
 #### Get Command Line Options
 ###############################
-while getopts ":a" opt; do
-  case $opt in
-    a)
-      echo "-a was triggered!" >&2
+while getopts ":d::h" opt; do
+case $opt in
+    d)
+      echo "-d was triggered, Parameter: $OPTARG" >&2
       ;;
     \?)
       echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument. Please specify display type" >&2
+      exit 1
+      ;;
+    h)
+      echo "Halp: -d DISPLAY_VAR " >&2
+      exit 1
       ;;
   esac
 done

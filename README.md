@@ -13,7 +13,7 @@ PiBadge Mini
 ```
 
 ## Description
-This year was crazy, so our origianl plan never happened. Howerever we wanted to do something so that people could have a badge for this year. Our idea was to have an open source design that you can buy parts online and put together at home. We did this with our first badge, and decided to revisit it now just in a smaller package ^_^
+This year was crazy, so our origianl plan never happened. Howerever we wanted to do something so that people could have a badge for this year. Our idea was to have an open source design that you can buy parts online and put together at home. We did this with our first badge, and decided to revisit it now just in a smaller package! 
 
 DCZia would like to present the PiBadge Mini: A Raspberry Pi Zero W with a Waveshare 1.44" LCD Display. We wrote a custom image for the Pi that will auto play some open source and in house made videos. 
 
@@ -21,13 +21,13 @@ DCZia would like to present the PiBadge Mini: A Raspberry Pi Zero W with a Waves
 ## Hardware
 
 The General Hardware used for this is:
-Raspberry Pi Zero W
-Waveshare 1.44" Pi Zero LCD Screen
-SD Card
+- Raspberry Pi Zero W
+- Waveshare 1.44" Pi Zero LCD Screen
+- SD Card
 
 Optional unsupported but likely to work:
-Any Pi
-Any screen supported by https://github.com/juj/fbcp-ili9341 
+- Any Pi
+- Any screen supported by https://github.com/juj/fbcp-ili9341 
 
 ## Mini Pi Badge Official Parts
 
@@ -54,12 +54,12 @@ Clone this repo and run the dczia_setup.sh script. Still a work in progress and 
   
 ## Alternative Options
 
-## Bring your own pi or fbcp-ili9341 display
+### Bring your own pi or fbcp-ili9341 display
 If you have any pi with a base Raspbian Buster image you should be able to run our setup script to build the badge environment. You will likely need to tune the fbcp-ili9341 build options for your screen. 
 
 Also if you have any PiScreen you should also be able to install the native drivers for your screen and then remove the fbcp-ili9341 driver section from the script to get up and running, but this is unsupported and other drivers may have performance issues.
 
-#### PiBadge XL
+### PiBadge XL
 
 What? I thought this year you were doing mini?! I know,.. I know... but if you want to go big we also present the PiBadge XL. Go buy a Hyperpixel 4" screen here:
 https://www.pishop.us/product/non-touch-hyperpixel-4-0-hi-res-display-for-raspberry-pi/
