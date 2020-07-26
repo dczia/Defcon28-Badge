@@ -13,20 +13,23 @@ PiBadge Mini
 ```
 
 ## Description
-This year was crazy, so our origianl plan never happened. Howerever we have something in store for everyone!
+This year was crazy, so our origianl plan never happened. Howerever we wanted to do something so that people could have a badge for this year. Our idea was to have an open source design that you can buy parts online and put together at home. We did this with our first badge, and decided to revisit it now just in a smaller package ^_^
+
+DCZia would like to present the PiBadge Mini: A Raspberry Pi Zero W with a Waveshare 1.44" LCD Display. We wrote a custom image for the Pi that will auto play some open source and in house made videos. 
+
 
 ## Hardware
 
-General List
+The General Hardware used for this is:
 Raspberry Pi Zero W
 Waveshare 1.44" Pi Zero LCD Screen
 SD Card
 
-Optional
+Optional unsupported but likely to work:
 Any Pi
-Any supported* screen
+Any screen supported by https://github.com/juj/fbcp-ili9341 
 
-Mini Pi Badge Official Parts
+## Mini Pi Badge Official Parts
 
 * WaveShare 1.44" LCD Screen 128x128 Resolution
   * https://www.amazon.com/waveshare-1-44inch-Interface-Direct-pluggable-Raspberry/dp/B077Z7DWW1/ref=sr_1_3?dchild=1&keywords=waveshare%2B1.44&qid=1595712958&sr=8-3&th=1
@@ -43,6 +46,11 @@ Mini Pi Badge Official Parts
   
   ## Software
   
+  ### Official DCZia Raspbian / Debian Buster Image
+  Coming soon!
+  
+  ### Build Script
+ 
   
   ## Alternative Options
 
