@@ -113,10 +113,19 @@ echo ""
 
 echo "$grn Checking for Turbo Mode $white"
 if ! grep -q force_turbo=1 /boot/config.txt; then
-	         echo "$red Updating /boot/config.txt- Enabling Turbo $white"
-		          sudo sed -i -e '$aforce_turbo=1' /boot/config.txt
-		  else
-			  echo "$blu Turbo mode already enabled $white"
+         echo "$red Updating /boot/config.txt- Enabling Turbo $white"
+         sudo sed -i -e '$aforce_turbo=1' /boot/config.txt
+ else
+	 echo "$blu Turbo mode already enabled $white"
+fi
+echo ""
+
+echo "$grn Checking for Overscan $white"
+if ! grep -q force_turbo=1 /boot/config.txt; then
+         echo "$red Updating /boot/config.txt- Disabling Overscan $white"
+         sudo sed -i -e '$aforce_turbo=1' /boot/config.txt
+ else
+         echo "$blu Overscan already disabled $white"
 fi
 echo ""
 
