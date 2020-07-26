@@ -48,8 +48,8 @@ done
 red=$'\e[1;31m'
 grn=$'\e[1;32m'
 blu=$'\e[1;34m'
-mag=$'\e[1;35m'
-cyn=$'\e[1;36m'
+# mag=$'\e[1;35m'
+# cyn=$'\e[1;36m'
 white=$'\e[0m'
 
 
@@ -65,7 +65,7 @@ echo ""
 ###############################
 #### Check if we have internet
 ###############################
-ping -q -w 1 -c 1 `ip r | grep default | cut -d ' ' -f 3` > /dev/null && echo $grn Net Connection Detected! $white || echo $red Error Cannont Connect to Net T_T $white
+ping -q -w 1 -c 1 "$(ip r | grep default | cut -d ' ' -f 3)" > /dev/null && echo "$grn Net Connection Detected! $white" || echo "$red Error Cannont Connect to Net T_T $white"
 
 
 ###############################
@@ -84,9 +84,9 @@ echo ""
 ### NEED TO CHECK CMD LINE OPTION AND FORK HERE FOR EACH SCREEN TYPE
 ### Adafruit PiTFT 3.5
 echo "$red Installing fbcp-ili9341 Driver $white"
-cd fbcp-ili9341
+cd fbcp-ili9341 || exit
 mkdir build
-cd build
+cd build || exit
 cmake -DADAFRUIT_HX8357D_PITFT=ON -DDISPLAY_ROTATE_180_DEGREES=ON -DSTATISTICS=0 -DSPI_BUS_CLOCK_DIVISOR=6 ..
 make -j
 echo ""
