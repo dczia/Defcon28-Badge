@@ -44,24 +44,31 @@ Any screen supported by https://github.com/juj/fbcp-ili9341
 * SD card 8GB minimun
   * https://www.amazon.com/Sandisk-Ultra-Micro-UHS-I-Adapter/dp/B073K14CVB/ref=sr_1_3?dchild=1&keywords=micro+sd+8&qid=1595713435&s=electronics&sr=1-3
   
-  ## Software
-  
-  ### Official DCZia Raspbian / Debian Buster Image
+## Software
+
+### Official DCZia Raspbian / Debian Buster Image
   Coming soon!
   
-  ### Build Script
- 
+### Build Script
+Clone this repo and run the dczia_setup.sh script. Still a work in progress and right now it only supports our PiBadge 1/2 screen the Adafruti PiTFT 3.5" 
   
 ## Alternative Options
 
-### PiBadge XL
+## Bring your own pi or fbcp-ili9341 display
+If you have any pi with a base Raspbian Buster image you should be able to run our setup script to build the badge environment. You will likely need to tune the fbcp-ili9341 build options for your screen. 
+
+Also if you have any PiScreen you should also be able to install the native drivers for your screen and then remove the fbcp-ili9341 driver section from the script to get up and running, but this is unsupported and other drivers may have performance issues.
+
+#### PiBadge XL
 
 What? I thought this year you were doing mini?! I know,.. I know... but if you want to go big we also present the PiBadge XL. Go buy a Hyperpixel 4" screen here:
 https://www.pishop.us/product/non-touch-hyperpixel-4-0-hi-res-display-for-raspberry-pi/
+
 Pi Shop also carries the Pi Zero W with and without headers: https://www.pishop.us/product/raspberry-pi-zero-w/
 
 Hyperpixel Cases: https://www.thingiverse.com/search?q=Hyperpixel&type=things&sort=relevant&page=2
 
 ### Cases
 
+## Troubleshooting
 

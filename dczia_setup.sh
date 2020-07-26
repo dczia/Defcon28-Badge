@@ -94,7 +94,7 @@ fi
 echo ""
 if ! grep -q autoplay /etc/rc.local; then
          echo "$red Updating rc.local - Enabling Autoplay$white"
-        # sudo sed -i -e '$a /home/pi/Defcon28-Badge/autoplay.sh' /etc/rc.local
+         sudo sed -i -e '$a /home/pi/Defcon28-Badge/autoplay.sh' /etc/rc.local
 fi
 echo ""
 
