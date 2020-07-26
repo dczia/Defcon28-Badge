@@ -67,27 +67,31 @@ echo ""
 
 sudo apt-get install omxplayer cmake libbsd-dev vim git
 git clone https://github.com/juj/fbcp-ili9341.git
-git clone https://github.com/dczia/Defcon28-Badge.git
+echo ""
 
 ###############################
 #### Setup TFT Screen Drivers
 ###############################
-
 ### NEED TO CHECK CMD LINE OPTION AND FORK HERE FOR EACH SCREEN TYPE
-
 ### Adafruit PiTFT 3.5
+echo "$red Installing fbcp-ili9341 Driver $white"
 cd fbcp-ili9341
 mkdir build
 cd build
 cmake -DADAFRUIT_HX8357D_PITFT=ON -DSTATISTICS=0 -DSPI_BUS_CLOCK_DIVISOR=8 ..
 make -j
+echo ""
 
-
+###############################
 #### System Setup Stuff
-
-if grep -q fbcp-ili9341 /etc/rc.local; then
-	 sudo echo "/home/pi/Defcon28-Badge/fbcp-ili9341/build/fbcp-ili9341 &" >> /etc/rc.local
+###############################
+# force_turbo=1 
+echo "Checking /etc/rc.local"
+if ! grep -q fbcp-ili9341 /etc/rc.local; then
+	 echo "$red Updating rc.local $white"
+	 sudo sed -i -e '$asudo /home/pi/Defcon28-Badge/fbcp-ili9341/build/fbcp-ili9341 &' /etc/rc.local
 fi
+echo ""
 
 #########################################
 #### So Long And Thanks For All The Fish!
