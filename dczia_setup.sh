@@ -78,7 +78,7 @@ echo "$red Installing fbcp-ili9341 Driver $white"
 cd fbcp-ili9341
 mkdir build
 cd build
-cmake -DADAFRUIT_HX8357D_PITFT=ON -DSTATISTICS=0 -DSPI_BUS_CLOCK_DIVISOR=8 ..
+cmake -DADAFRUIT_HX8357D_PITFT=ON -DDISPLAY_ROTATE_180_DEGREES=ON -DSTATISTICS=0 -DSPI_BUS_CLOCK_DIVISOR=6 ..
 make -j
 echo ""
 
@@ -86,10 +86,15 @@ echo ""
 #### System Setup Stuff
 ###############################
 # force_turbo=1 
-echo "Checking /etc/rc.local"
+echo "$grn Checking /etc/rc.local $white"
 if ! grep -q fbcp-ili9341 /etc/rc.local; then
-	 echo "$red Updating rc.local $white"
+	 echo "$red Updating rc.local - Enabling fbcp-ili9341 $white"
 	 sudo sed -i -e '$asudo /home/pi/Defcon28-Badge/fbcp-ili9341/build/fbcp-ili9341 &' /etc/rc.local
+fi
+echo ""
+if ! grep -q autoplay /etc/rc.local; then
+         echo "$red Updating rc.local - Enabling Autoplay$white"
+        # sudo sed -i -e '$a /home/pi/Defcon28-Badge/autoplay.sh' /etc/rc.local
 fi
 echo ""
 
