@@ -52,5 +52,16 @@ Any screen supported by https://github.com/juj/fbcp-ili9341
   ### Build Script
  
   
-  ## Alternative Options
+## Alternative Options
+
+### PiBadge XL
+
+What? I thought this year you were doing mini?! I know,.. I know... but if you want to go big we also present the PiBadge XL. Go buy a Hyperpixel 4" screen here:
+https://www.pishop.us/product/non-touch-hyperpixel-4-0-hi-res-display-for-raspberry-pi/
+Pi Shop also carries the Pi Zero W with and without headers: https://www.pishop.us/product/raspberry-pi-zero-w/
+
+Hyperpixel Cases: https://www.thingiverse.com/search?q=Hyperpixel&type=things&sort=relevant&page=2
+
+### Cases
+
 
