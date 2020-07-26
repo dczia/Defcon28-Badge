@@ -98,13 +98,15 @@ echo ""
 ### Adafruit PiTFT 3.5
 
 if [[ "${DISPVAR}" == "HX8357D" ]] ; then
-    DISPTYPE="HX8357D"
+    DISPTYPE="-DADAFRUIT_HX8357D_PITFT=ON"
     # FIXME: probably need stuff here
+    mkdir build
+    cd build || exit
     cmake "${DISPTYPE}" -DDISPLAY_ROTATE_180_DEGREES=ON -DSTATISTICS=0 -DSPI_BUS_CLOCK_DIVISOR=6 ..
     make -j
     echo ""
 elif [[ "${DISPVAR}" == "ILI9341" ]] ; then
-    DISPTYPE="ILI9341"
+    DISPTYPE="-DADAFRUIT_ILI9341_PITFT=ON"
     echo "$red Installing fbcp-ili9341 Driver $white"
     cd fbcp-ili9341 || exit
     mkdir build
@@ -113,8 +115,10 @@ elif [[ "${DISPVAR}" == "ILI9341" ]] ; then
     make -j
     echo ""
 elif [[ "${DISPVAR}" == "WAVESHARE" ]] ; then
-    DISPTYPE="WAVESHARE_ST7735S"
+    DISPTYPE="-DWAVESHARE_ST7735S_HAT=ON"
     # FIXME: probably need stuff here
+    mkdir build
+    cd build || exit
     cmake "${DISPTYPE}" -DDISPLAY_ROTATE_180_DEGREES=ON -DSTATISTICS=0 -DSPI_BUS_CLOCK_DIVISOR=6 ..
     make -j
     echo ""
