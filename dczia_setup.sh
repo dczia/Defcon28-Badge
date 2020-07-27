@@ -97,36 +97,24 @@ echo ""
 ### NEED TO CHECK CMD LINE OPTION AND FORK HERE FOR EACH SCREEN TYPE
 ### Adafruit PiTFT 3.5
 
+cd fbcp-ili9341 
+mkdir build
+cd build || exit
 if [[ "${DISPVAR}" == "HX8357D" ]] ; then
     DISPTYPE="-DADAFRUIT_HX8357D_PITFT=ON"
     echo "$red Installing fbcp-ili9341 Driver for PiTFT 3.5$white"
-    cd fbcp-ili9341 
-    # FIXME: probably need stuff here
-    mkdir build
-    cd build || exit
     cmake "${DISPTYPE}" -DDISPLAY_ROTATE_180_DEGREES=ON -DSTATISTICS=0 -DSPI_BUS_CLOCK_DIVISOR=6 ..
-    make -j
-    echo ""
 elif [[ "${DISPVAR}" == "ILI9341" ]] ; then
     DISPTYPE="-DADAFRUIT_ILI9341_PITFT=ON"
     echo "$red Installing fbcp-ili9341 Driver for Adafruit 2.8$white"
-    cd fbcp-ili9341 || exit
-    mkdir build
-    cd build || exit
     cmake "${DISPTYPE}" -DDISPLAY_ROTATE_180_DEGREES=ON -DSTATISTICS=0 -DSPI_BUS_CLOCK_DIVISOR=6 ..
-    make -j
-    echo ""
 elif [[ "${DISPVAR}" == "WAVESHARE" ]] ; then
     DISPTYPE="-DWAVESHARE_ST7735S_HAT=ON"
     echo "$red Installing fbcp-ili9341 Driver for Waveshare 1.44$white"
-    # FIXME: probably need stuff here
-    cd fbcp-ili9341 
-    mkdir build
-    cd build || exit
     cmake "${DISPTYPE}" -DDISPLAY_ROTATE_180_DEGREES=ON -DSTATISTICS=0 -DSPI_BUS_CLOCK_DIVISOR=6 ..
-    make -j
-    echo ""
 fi
+make -j
+echo ""
 
 ###############################
 #### System Setup Stuff
