@@ -97,7 +97,7 @@ echo ""
 ### NEED TO CHECK CMD LINE OPTION AND FORK HERE FOR EACH SCREEN TYPE
 ### Adafruit PiTFT 3.5
 
-cd fbcp-ili9341 
+cd fbcp-ili9341 || exit
 mkdir build
 cd build || exit
 if [[ "${DISPVAR}" == "HX8357D" ]] ; then

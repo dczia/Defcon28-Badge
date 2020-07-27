@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 
+PLAYLIST="${1}"
 
 #Sets the playlist to play:
-$TEST
-# $DEFAULT 
-# $MOVIES
-# $C64
+# TEST (default)
+# DEFAULT 
+# MOVIES
+# C64
 
 ##Turns off cursor blink on display
 # setterm -cursor off > /dev/tty0
@@ -13,12 +14,10 @@ $TEST
 ##Clear the term before firing up omxplayer
 # clear > /dev/tty0
 
-if [ -v "${TEST}" ]
-then
- omxplayer --loop --fps 24 --no-osd -z -b --no-keys --aspect-mode stretch /home/pi/Defcon28-Badge/videos/exhaust_test.mp4 > /dev/null 2>&1 &
+if [[ -z "${PLAYLIST}" || "${PLAYLIST}" == "TEST" ]] ; then
+  omxplayer --loop --fps 24 --no-osd -z -b --no-keys --aspect-mode stretch /home/pi/Defcon28-Badge/videos/exhaust_test.mp4 > /dev/null 2>&1 &
 
-elif [ -v "${DEFAULT}" ]
-then
+elif [[ "${PLAYLIST}" == "DEFAULT" ]] ; then
   echo "Default Playlist"
   ## Play some videos
   while true; do
@@ -32,13 +31,11 @@ then
   done
   # setterm -cursor on > /dev/tty0
 
-elif [ -v "${MOVIES}" ]
-then
+elif [[ "${PLAYLIST}" == "MOVIES" ]] ; then
   echo "Movies"
   omxplayer --loop --fps 24 --no-osd -z --aspect-mode stretch /home/pi/Defcon28-Badge/videos/DC_Movie.mp4 &
 
-elif [ -v "${C64}" ]
-then
+elif [[ "${PLAYLIST}" == "C64" ]] ; then
   echo "C64"
   omxplayer --loop --fps 24 --no-osd -z --aspect-mode stretch /home/pi/Defcon28-Badge/videos/DC64.mp4 &
 
