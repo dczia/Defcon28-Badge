@@ -111,9 +111,9 @@ elif [[ "${DISPVAR}" == "ILI9341" ]] ; then
 elif [[ "${DISPVAR}" == "WAVESHARE" ]] ; then
     DISPTYPE="-DWAVESHARE_ST7735S_HAT=ON"
     echo "$red Installing fbcp-ili9341 Driver for Waveshare 1.44$white"
-    cmake "${DISPTYPE}" -DDISPLAY_ROTATE_180_DEGREES=ON -DSTATISTICS=0 -DSPI_BUS_CLOCK_DIVISOR=6 ..
-fi
-make -j
+    cmake "${DISPTYPE}" -DDISPLAY_ROTATE_180_DEGREES=OFF -DSTATISTICS=0 -DSPI_BUS_CLOCK_DIVISOR=8 -DDISPLAY_CROPPED_INSTEAD_OF_SCALING=OFF -DDISPLAY_BREAK_ASPECT_RATIO_WHEN_SCALING=ON ..
+fi    
+    make -j
 echo ""
 
 ###############################
