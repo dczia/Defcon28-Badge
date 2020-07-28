@@ -1,7 +1,5 @@
 # DEFCON28-Badge
-DCZia 2020 Defcon 28 Badge
-
-PiBadge Mini
+DCZia 2020 Defcon 28 Badge - PiBadge Mini
 
 ```
  ____  _ ____            _            __  __ _       _ 
@@ -17,6 +15,7 @@ This year was crazy, so our origianl plan never happened. Howerever we wanted to
 
 DCZia would like to present the PiBadge Mini: A Raspberry Pi Zero W with a Waveshare 1.44" LCD Display. We wrote a custom image for the Pi that will auto play some open source and in house made videos. 
 
+#### *Please Note this build guide is not complete - Come back 7/30 for final instructions but you can order hardware now!*
 
 ## Hardware
 
