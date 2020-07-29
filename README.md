@@ -21,12 +21,12 @@ DCZia would like to present the PiBadge Mini: A Raspberry Pi Zero W with a Waves
 
 Coming soon, but here is the rough guide:
 
-* Gather parts listed in the Hardware Overview.
+* Gather parts listed in the [Hardware Overview](#hardware-overview).
 * Get your pi and screen, and put them together. If your pi does not have headers already attached, solder them on now. 
 * Install the screen. Be gentle when putting the screen on, gently press on the sides of the boards to attach it. Avoid pressing down on the screen as it is delicate.
 * Burn the official DCZia Raspbian image to your SD card using something like balenaEtcher or another SD card imaging tool. (dd, etc...)
    * Optionally if you want to build your own image read about how to use our [Build Script](#build-script)
-* ...
+* Power on your pi with a usb power adapter.
 * Profit ?
 
 ## Hardware Overview
@@ -36,11 +36,11 @@ The general hardware used for this is:
 - Waveshare 1.44" Pi Zero LCD Screen
 - SD Card
 
-Optional nsupported but likely to work:
+Optional unsupported hardware, but likely to work:
 - Any Pi
 - Any screen supported by https://github.com/juj/fbcp-ili9341 
 
-Cheap mode (aka i have a pi but dont want to buy a screen)
+Cheap mode (aka i already have a pi but dont want to buy a screen)
 - Any Pi
 - Plug HDMI from the Pi into your TV. Presto, giant DCZia badge / screensaver / whatever
 
@@ -68,7 +68,7 @@ Cheap mode (aka i have a pi but dont want to buy a screen)
 
 Download Raspbian Buster Lite (https://downloads.raspberrypi.org/raspios_lite_armhf_latest), burn it to an sd card, [enable networking](#wifi-setup), boot it, clone our git repo, and run the dczia_setup.sh script. Reboot and you should be good!
 
-Still a work in progress. Curreently it supports our PiBadge 1/2 screen the Adafruti PiTFT 3.5", and the WaveShare 1.44" LCD. Shoudl work on a Pi Zero, Pi Zero W, Pi A, and Pi B.
+Still a work in progress. Currently it supports our PiBadge 1/2 screen the Adafruti PiTFT 3.5", and the WaveShare 1.44" LCD. Shoudl work on a Pi Zero, Pi Zero W, Pi A, and Pi B.
   
 ## Alternative Options
 
