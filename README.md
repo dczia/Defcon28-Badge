@@ -17,7 +17,18 @@ DCZia would like to present the PiBadge Mini: A Raspberry Pi Zero W with a Waves
 
 #### *Please Note this build guide is not complete - Come back 7/30 for final instructions but you can order hardware now!*
 
-## Hardware
+## Build Guide
+
+Coming soon, but here is the rough guide:
+
+* Get your pi and screen, and put them together. If your pi does not have headers already attached, solder them on now. 
+* Install the screen. Be gentle when putting the screen on, gently press on the sides of the boards to attach it. Avoid pressing down on the screen as it is delicate.
+* Burn the official DCZia Raspbian image to your SD card using something like balenaEtcher or another SD card imaging tool. (dd, etc...)
+   * Optionally if you want to build your own image, download Raspbian Buster Lite (https://downloads.raspberrypi.org/raspios_lite_armhf_latest) Clone our git repo, and run the dczia_setup.sh script. Reboot and you should be good!
+* ...
+* Profit ?
+
+## Hardware Overview
 
 The General Hardware used for this is:
 - Raspberry Pi Zero W
@@ -28,7 +39,7 @@ Optional unsupported but likely to work:
 - Any Pi
 - Any screen supported by https://github.com/juj/fbcp-ili9341 
 
-## Mini Pi Badge Official Parts
+## Mini Pi Badge Official Hardware
 
 * WaveShare 1.44" LCD Screen 128x128 Resolution
   * https://www.amazon.com/waveshare-1-44inch-Interface-Direct-pluggable-Raspberry/dp/B077Z7DWW1/ref=sr_1_3?dchild=1&keywords=waveshare%2B1.44&qid=1595712958&sr=8-3&th=1
@@ -43,7 +54,7 @@ Optional unsupported but likely to work:
 * SD card 8GB minimun
   * https://www.amazon.com/Sandisk-Ultra-Micro-UHS-I-Adapter/dp/B073K14CVB/ref=sr_1_3?dchild=1&keywords=micro+sd+8&qid=1595713435&s=electronics&sr=1-3
   
-## Software
+## Software Setup Guide
 
 ### Official DCZia Raspbian / Debian Buster Image
   Coming soon!
