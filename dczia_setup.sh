@@ -124,6 +124,7 @@ echo ""
 echo "$grn Checking /etc/rc.local $white"
 if ! grep -q fbcp-ili9341 /etc/rc.local; then
 	 echo "$red Updating rc.local - Enabling fbcp-ili9341 $white"
+	 sed -i 's/exit 0//g' /etc/rc.local
 	 sudo sed -i -e '$asudo /home/pi/Defcon28-Badge/fbcp-ili9341/build/fbcp-ili9341 &' /etc/rc.local
 
  else
@@ -133,6 +134,7 @@ fi
 if ! grep -q autoplay /etc/rc.local; then
          echo "$red Updating rc.local - Enabling Autoplay $white"
          sudo sed -i -e '$a /home/pi/Defcon28-Badge/autoplay.sh ALL' /etc/rc.local
+	 sudo sed -i -e '$a exit 0' /etc/rc.local
  else 
 	 echo "$blu Autoplay already enabled $white"
 fi
