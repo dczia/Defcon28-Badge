@@ -130,7 +130,7 @@ fi
 
 if ! grep -q autoplay /etc/rc.local; then
          echo "$red Updating rc.local - Enabling Autoplay $white"
-         sudo sed -i -e '$a /home/pi/Defcon28-Badge/autoplay.sh all' /etc/rc.local
+         sudo sed -i -e '$a /home/pi/Defcon28-Badge/autoplay.sh ALL' /etc/rc.local
  else 
 	 echo "$blu Autoplay already enabled $white"
 fi
@@ -140,7 +140,7 @@ echo "$grn Checking for DCZia Boot Settings $white"
 if ! grep -q "DCZia_Hackz" /boot/config.txt; then
         echo "$red Updating /boot/config.txt - Enabling Speed Hacks $white"
         #sudo sed -i -e '$aforce_turbo=1' /boot/config.txt
-	sudo sed '/console/ s/$/ quiet loglevel=3 console=tty=3/' /boot/cmdline.txt
+	#sudo sed '/console/ s/$/ quiet loglevel=3 console=tty3/' /boot/cmdline.txt
         cat /home/pi/Defcon28-Badge/boot_hacks | sudo tee -a /boot/config.txt > /dev/null
 	sudo systemctl disable ntp.service
 	sudo systemctl disable dphys-swapfile.service
@@ -150,12 +150,28 @@ if ! grep -q "DCZia_Hackz" /boot/config.txt; then
 	sudo systemctl disable hciuart.service
 	sudo systemctl disable raspi-config.service
 	sudo systemctl disable avahi-daemon.service
-	sudo systemctl disable triggerhappy.service
+	#sudo systemctl disable triggerhappy.service
         sudo systemctl disable rsyslog.service
 	sudo systemctl disable systemd-timesyncd.service
 else
 	echo "$blu DCZIa Speed Hacks Enabled $white" 
 fi
+
+if ! grep -q "quiet" /boot/cmdline.txt; then
+
+	echo "$red Setting up console $white"
+	echo "Set up main console turn on"
+    	if ! grep -q 'fbcon=map:10 fbcon=font:VGA8x8' /boot/cmdline.txt; then
+        	echo "Updating /boot/cmdline.txt"
+        	sed -i 's/rootwait/rootwait fbcon=map:10 fbcon=font:VGA8x8/g' "/boot/cmdline.txt"
+    	else
+        	echo "/boot/cmdline.txt already updated"
+    	fi
+
+	sudo sed '/console/ s/$/ quiet loglevel=3 console=tty3/' /boot/cmdline.txt
+
+fi
+
 echo ""
 
 #########################################
