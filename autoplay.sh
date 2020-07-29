@@ -15,7 +15,8 @@ PLAYLIST="${1}"
 clear > /dev/tty1
 
 if [[ -z "${PLAYLIST}" || "${PLAYLIST}" == "TEST" ]] ; then
-  omxplayer --loop --no-osd -z -b --no-keys --aspect-mode stretch /home/pi/Defcon28-Badge/videos/exhaust_test.mp4 > /dev/null 2>&1 &
+  omxplayer --loop --no-osd -z -b --no-keys --aspect-mode stretch /home/pi/Defcon28-Badge/videos/ellctor_loop.mp4 > /dev/null 2>&1 & 
+  clear > /dev/tty1
 
 elif [[ "${PLAYLIST}" == "DEFAULT" ]] ; then
   echo "Default Playlist"
