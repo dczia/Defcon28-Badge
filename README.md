@@ -76,8 +76,10 @@ Coming Soon!
 
 ### Enable Wifi
 If you want to configure your pi to have network access there are two way to do it:
-If you do not have a keyboard & monitor
+
+*If you do not have a keyboard & monitor*
 Mount your /boot partition on the SDCard and add a file called wpa_supplicant.conf
+
 Add the following information:
 ```
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
@@ -89,9 +91,11 @@ network={
  psk="<Password for your wireless LAN>"
 }
 ```
-https://www.raspberrypi.org/documentation/configuration/wireless/headless.md
+More info at: https://www.raspberrypi.org/documentation/configuration/wireless/headless.md
 
-If you have a keyboard and monitor, log into your Pi using the default Raspbian username and password then use the tool raspi-config to setup WiFi. 
+*If you have a keyboard and monitor*
+
+Log into your Pi using the default Raspbian username and password then use the tool raspi-config to setup WiFi. 
 
 Alternativly you can use the commandline to setup your wireless network.
 
@@ -107,6 +111,9 @@ network={
     }
 ```
 NOTE: for added security (who doesn’t appreciate that?), omit the quotes and input your password as a 32 byte hexadecimal!
+
 Save the file by pressing Ctrl+x, then y, then Enter
+
 If it doesn’t work, check your inputs
+
 More config deets available at https://www.raspberrypi.org/documentation/configuration/wireless
