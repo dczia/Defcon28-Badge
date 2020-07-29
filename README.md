@@ -49,7 +49,9 @@ Optional unsupported but likely to work:
   Coming soon!
   
 ### Build Script
-Clone this repo and run the dczia_setup.sh script. Still a work in progress and right now it only supports our PiBadge 1/2 screen the Adafruti PiTFT 3.5" 
+Clone this repo and run the dczia_setup.sh script on a Raspbian Buster Light stock install. 
+
+Still a work in progress. Curreently it supports our PiBadge 1/2 screen the Adafruti PiTFT 3.5", and the WaveShare 1.44" LCD. Shoudl work on a Pi Zero, Pi Zero W, Pi A, and Pi B.
   
 ## Alternative Options
 
@@ -68,6 +70,43 @@ Pi Shop also carries the Pi Zero W with and without headers: https://www.pishop.
 Hyperpixel Cases: https://www.thingiverse.com/search?q=Hyperpixel&type=things&sort=relevant&page=2
 
 ### Cases
+Coming Soon!
 
 ## Troubleshooting
 
+### Enable Wifi
+If you want to configure your pi to have network access there are two way to do it:
+If you do not have a keyboard & monitor
+Mount your /boot partition on the SDCard and add a file called wpa_supplicant.conf
+Add the following information:
+```
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+country=<Insert 2 letter ISO 3166-1 country code here>
+
+network={
+ ssid="<Name of your wireless LAN>"
+ psk="<Password for your wireless LAN>"
+}
+```
+https://www.raspberrypi.org/documentation/configuration/wireless/headless.md
+
+If you have a keyboard and monitor, log into your Pi using the default Raspbian username and password then use the tool raspi-config to setup WiFi. 
+
+Alternativly you can use the commandline to setup your wireless network.
+
+Open the wpa-supplicant config file in nano or vi:
+
+sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+
+Add the following lines to the bottom:
+```
+network={
+    ssid="your network"
+    psk="your password"
+    }
+```
+NOTE: for added security (who doesn’t appreciate that?), omit the quotes and input your password as a 32 byte hexadecimal!
+Save the file by pressing Ctrl+x, then y, then Enter
+If it doesn’t work, check your inputs
+More config deets available at https://www.raspberrypi.org/documentation/configuration/wireless
