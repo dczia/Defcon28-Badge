@@ -87,7 +87,9 @@ ping -q -w 1 -c 1 "$(ip r | grep default | cut -d ' ' -f 3)" > /dev/null && echo
 echo "$grn Installing Software $white"
 echo ""
 
-sudo apt-get install omxplayer cmake libbsd-dev vim git
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install omxplayer cmake vim git 
 git clone https://github.com/juj/fbcp-ili9341.git
 echo ""
 
