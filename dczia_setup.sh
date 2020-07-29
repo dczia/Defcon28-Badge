@@ -130,7 +130,7 @@ fi
 
 if ! grep -q autoplay /etc/rc.local; then
          echo "$red Updating rc.local - Enabling Autoplay $white"
-         sudo sed -i -e '$a /home/pi/Defcon28-Badge/autoplay.sh' /etc/rc.local
+         sudo sed -i -e '$a /home/pi/Defcon28-Badge/autoplay.sh all' /etc/rc.local
  else 
 	 echo "$blu Autoplay already enabled $white"
 fi
@@ -151,6 +151,8 @@ if ! grep -q "DCZia_Hackz" /boot/config.txt; then
 	sudo systemctl disable raspi-config.service
 	sudo systemctl disable avahi-daemon.service
 	sudo systemctl disable triggerhappy.service
+        sudo systemctl disable rsyslog.service
+	sudo systemctl disable systemd-timesyncd.service
 else
 	echo "$blu DCZIa Speed Hacks Enabled $white" 
 fi

@@ -24,7 +24,7 @@ Coming soon, but here is the rough guide:
 * Get your pi and screen, and put them together. If your pi does not have headers already attached, solder them on now. 
 * Install the screen. Be gentle when putting the screen on, gently press on the sides of the boards to attach it. Avoid pressing down on the screen as it is delicate.
 * Burn the official DCZia Raspbian image to your SD card using something like balenaEtcher or another SD card imaging tool. (dd, etc...)
-   * Optionally if you want to build your own image, download Raspbian Buster Lite (https://downloads.raspberrypi.org/raspios_lite_armhf_latest) Clone our git repo, and run the dczia_setup.sh script. Reboot and you should be good!
+   * Optionally if you want to build your own image, download Raspbian Buster Lite (https://downloads.raspberrypi.org/raspios_lite_armhf_latest), burn it to an sd card, boot, enable networking, clone our git repo, and run the dczia_setup.sh script. Reboot and you should be good!
 * ...
 * Profit ?
 
