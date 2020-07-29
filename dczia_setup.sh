@@ -87,9 +87,9 @@ ping -q -w 1 -c 1 "$(ip r | grep default | cut -d ' ' -f 3)" > /dev/null && echo
 echo "$grn Installing Software $white"
 echo ""
 
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install omxplayer cmake vim git 
+sudo apt-get -y update
+#sudo apt-get upgrade
+sudo apt-get -y install omxplayer cmake vim git 
 git clone https://github.com/juj/fbcp-ili9341.git
 echo ""
 
@@ -124,6 +124,7 @@ echo ""
 echo "$grn Checking /etc/rc.local $white"
 if ! grep -q fbcp-ili9341 /etc/rc.local; then
 	 echo "$red Updating rc.local - Enabling fbcp-ili9341 $white"
+	 sudo sed -i 's/exit 0//g' /etc/rc.local
 	 sudo sed -i -e '$asudo /home/pi/Defcon28-Badge/fbcp-ili9341/build/fbcp-ili9341 &' /etc/rc.local
 
  else
@@ -132,7 +133,12 @@ fi
 
 if ! grep -q autoplay /etc/rc.local; then
          echo "$red Updating rc.local - Enabling Autoplay $white"
+<<<<<<< HEAD
          sudo sed -i -e '$a sudo /home/pi/Defcon28-Badge/autoplay.sh TEST' /etc/rc.local
+=======
+         sudo sed -i -e '$a /home/pi/Defcon28-Badge/autoplay.sh ALL' /etc/rc.local
+	 sudo sed -i -e '$a exit 0' /etc/rc.local
+>>>>>>> 08a3bb2e40261c4badadf7cd38f2b5a3d2c8e5ff
  else 
 	 echo "$blu Autoplay already enabled $white"
 fi
@@ -144,7 +150,8 @@ if ! grep -q "DCZia_Hackz" /boot/config.txt; then
         #sudo sed -i -e '$aforce_turbo=1' /boot/config.txt
 	#sudo sed '/console/ s/$/ quiet loglevel=3 console=tty3/' /boot/cmdline.txt
         cat /home/pi/Defcon28-Badge/boot_hacks | sudo tee -a /boot/config.txt > /dev/null
-	sudo systemctl disable ntp.service
+	#sudo systemctl disable ntp.service
+	#sudo systemctl disable triggerhappy.service
 	sudo systemctl disable dphys-swapfile.service
 	sudo systemctl disable keyboard-setup.service
 	sudo systemctl disable apt-daily.service
@@ -152,7 +159,6 @@ if ! grep -q "DCZia_Hackz" /boot/config.txt; then
 	sudo systemctl disable hciuart.service
 	sudo systemctl disable raspi-config.service
 	sudo systemctl disable avahi-daemon.service
-	#sudo systemctl disable triggerhappy.service
         sudo systemctl disable rsyslog.service
 	sudo systemctl disable systemd-timesyncd.service
 else
@@ -165,12 +171,12 @@ if ! grep -q "quiet" /boot/cmdline.txt; then
 	echo "Set up main console turn on"
     	if ! grep -q 'fbcon=map:10 fbcon=font:VGA8x8' /boot/cmdline.txt; then
         	echo "Updating /boot/cmdline.txt"
-        	sed -i 's/rootwait/rootwait fbcon=map:10 fbcon=font:VGA8x8/g' "/boot/cmdline.txt"
+        	sudo sed -i 's/rootwait/rootwait fbcon=map:10 fbcon=font:VGA8x8/g' "/boot/cmdline.txt"
     	else
         	echo "/boot/cmdline.txt already updated"
     	fi
 
-	sudo sed '/console/ s/$/ quiet loglevel=3 console=tty3/' /boot/cmdline.txt
+	sudo sed -i -e '/console/ s/$/ quiet loglevel=3 console=tty3/' /boot/cmdline.txt
 
 fi
 
