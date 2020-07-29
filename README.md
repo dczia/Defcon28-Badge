@@ -108,11 +108,13 @@ network={
  psk="<Password for your wireless LAN>"
 }
 ```
+Finally add an empty file called SSH to the /boot folder to enable SSH.
+
 More info at: https://www.raspberrypi.org/documentation/configuration/wireless/headless.md
 
 *If you have a keyboard and monitor*
 
-Log into your Pi using the default Raspbian username and password then use the tool raspi-config to setup WiFi. 
+Log into your Pi using the default Raspbian username and password then use the tool raspi-config to setup WiFi and enable SSH.
 
 Alternativly you can use the commandline to setup your wireless network.
 
