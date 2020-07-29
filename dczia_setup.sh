@@ -87,8 +87,8 @@ ping -q -w 1 -c 1 "$(ip r | grep default | cut -d ' ' -f 3)" > /dev/null && echo
 echo "$grn Installing Software $white"
 echo ""
 
-sudo apt-get update
-sudo apt-get upgrade
+#sudo apt-get update
+#sudo apt-get upgrade
 sudo apt-get install omxplayer cmake vim git 
 git clone https://github.com/juj/fbcp-ili9341.git
 echo ""
@@ -144,7 +144,8 @@ if ! grep -q "DCZia_Hackz" /boot/config.txt; then
         #sudo sed -i -e '$aforce_turbo=1' /boot/config.txt
 	#sudo sed '/console/ s/$/ quiet loglevel=3 console=tty3/' /boot/cmdline.txt
         cat /home/pi/Defcon28-Badge/boot_hacks | sudo tee -a /boot/config.txt > /dev/null
-	sudo systemctl disable ntp.service
+	#sudo systemctl disable ntp.service
+	#sudo systemctl disable triggerhappy.service
 	sudo systemctl disable dphys-swapfile.service
 	sudo systemctl disable keyboard-setup.service
 	sudo systemctl disable apt-daily.service
@@ -152,7 +153,6 @@ if ! grep -q "DCZia_Hackz" /boot/config.txt; then
 	sudo systemctl disable hciuart.service
 	sudo systemctl disable raspi-config.service
 	sudo systemctl disable avahi-daemon.service
-	#sudo systemctl disable triggerhappy.service
         sudo systemctl disable rsyslog.service
 	sudo systemctl disable systemd-timesyncd.service
 else
@@ -170,7 +170,7 @@ if ! grep -q "quiet" /boot/cmdline.txt; then
         	echo "/boot/cmdline.txt already updated"
     	fi
 
-	sudo sed '/console/ s/$/ quiet loglevel=3 console=tty3/' /boot/cmdline.txt
+	sudo sed -i -e '/console/ s/$/ quiet loglevel=3 console=tty3/' /boot/cmdline.txt
 
 fi
 
