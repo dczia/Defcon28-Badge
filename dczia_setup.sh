@@ -111,7 +111,7 @@ elif [[ "${DISPVAR}" == "ILI9341" ]] ; then
 elif [[ "${DISPVAR}" == "WAVESHARE" ]] ; then
     DISPTYPE="-DWAVESHARE_ST7735S_HAT=ON"
     echo "$red Installing fbcp-ili9341 Driver for Waveshare 1.44$white"
-    cmake "${DISPTYPE}" -DDISPLAY_ROTATE_180_DEGREES=OFF -DSTATISTICS=0 -DSPI_BUS_CLOCK_DIVISOR=8 -DDISPLAY_CROPPED_INSTEAD_OF_SCALING=OFF -DDISPLAY_BREAK_ASPECT_RATIO_WHEN_SCALING=ON ..
+    cmake "${DISPTYPE}" -DDISPLAY_ROTATE_180_DEGREES=OFF -DSTATISTICS=0 -DSPI_BUS_CLOCK_DIVISOR=14 -DDISPLAY_CROPPED_INSTEAD_OF_SCALING=OFF -DDISPLAY_BREAK_ASPECT_RATIO_WHEN_SCALING=ON ..
 fi    
     make -j
 echo ""
@@ -136,21 +136,23 @@ if ! grep -q autoplay /etc/rc.local; then
 fi
 echo ""
 
-echo "$grn Checking for Turbo Mode $white"
-if ! grep -q force_turbo=1 /boot/config.txt; then
-         echo "$red Updating /boot/config.txt- Enabling Turbo $white"
-         sudo sed -i -e '$aforce_turbo=1' /boot/config.txt
- else
-	 echo "$blu Turbo mode already enabled $white"
-fi
-echo ""
-
-echo "$grn Checking for Overscan $white"
-if ! grep -q force_turbo=1 /boot/config.txt; then
-         echo "$red Updating /boot/config.txt- Disabling Overscan $white"
-         sudo sed -i -e '$aforce_turbo=1' /boot/config.txt
- else
-         echo "$blu Overscan already disabled $white"
+echo "$grn Checking for DCZia Boot Settings $white"
+if ! grep -q "DCZia_Hackz" /boot/config.txt; then
+        echo "$red Updating /boot/config.txt - Enabling Speed Hacks $white"
+        #sudo sed -i -e '$aforce_turbo=1' /boot/config.txt
+	sudo sed '/console/ s/$/ quiet loglevel=3 console=tty=3/' /boot/cmdline.txt
+        cat /home/pi/Defcon28-Badge/boot_hacks | sudo tee -a /boot/config.txt > /dev/null
+	sudo systemctl disable ntp.service
+	sudo systemctl disable dphys-swapfile.service
+	sudo systemctl disable keyboard-setup.service
+	sudo systemctl disable apt-daily.service
+	sudo systemctl disable wifi-country.service
+	sudo systemctl disable hciuart.service
+	sudo systemctl disable raspi-config.service
+	sudo systemctl disable avahi-daemon.service
+	sudo systemctl disable triggerhappy.service
+else
+	echo "$blu DCZIa Speed Hacks Enabled $white" 
 fi
 echo ""
 
