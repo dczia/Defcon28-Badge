@@ -34,7 +34,7 @@ Coming soon, but here is the rough guide:
 The general hardware used for this is:
 - Raspberry Pi Zero W
 - Waveshare 1.44" Pi Zero LCD Screen
-- SD Card
+- SD Card - Speed Class 10 / U1 highly recommended
 
 Optional unsupported hardware, but likely to work:
 - Any Pi
