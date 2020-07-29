@@ -1,5 +1,7 @@
 
 #DCZia_Hackz
+#Info mostly sourced from: https://himeshp.blogspot.com/2018/08/fast-boot-with-raspberry-pi.html
+
 gpu_mem=64
 disable_overscan=1
 
