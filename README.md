@@ -11,7 +11,7 @@ DCZia 2020 Defcon 28 Badge - PiBadge Mini
 ```
 
 ## Description
-This year was crazy, so our origianl plan never happened. Howerever we wanted to do something so that people could have a badge for this year. Our idea was to have an open source design that you can buy parts online and put together at home. We did this with our first badge, and decided to revisit it now just in a smaller package! 
+This year was crazy, so our origianl plan never happened. Howerever we wanted to do something so that people could have a badge for this year. Our idea was to have an open source design that you can buy parts online and put together at home. We did this with our first badge, and decided to revisit it now just in a smaller package! Think of it as a mini badge, or a small desk toy.
 
 DCZia would like to present the PiBadge Mini: A Raspberry Pi Zero W with a Waveshare 1.44" LCD Display. We wrote a custom image for the Pi that will auto play some open source and in house made videos. 
 
@@ -38,6 +38,10 @@ The General Hardware used for this is:
 Optional unsupported but likely to work:
 - Any Pi
 - Any screen supported by https://github.com/juj/fbcp-ili9341 
+
+Cheap Mode (aka i have a pi but dont want to buy a screen)
+- Any Pi
+- Plug HDMI from the Pi into your TV. Presto, giant DCZia badge / screensaver / whatever
 
 ## Mini Pi Badge Official Hardware
 
