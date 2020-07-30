@@ -41,7 +41,7 @@ case $opt in
     h)
       echo "Halp: -D DISPLAY_VAR " >&2
       echo "Currently supported: " >&2
-      echo "  WAVESHARE - Waveshare ST7735S (default)" >&2
+      echo "  WAVESHARE - Waveshare 1.44 ST7735S (default)" >&2
       echo "  HX8357D - Adafruit PiTFT 3.5" >&2
       echo "  ILI9341 - Adafruit 2.8 TFT" >&2
       exit 1
@@ -143,10 +143,7 @@ echo ""
 echo "$grn Checking for DCZia Boot Settings $white"
 if ! grep -q "DCZia_Hackz" /boot/config.txt; then
         echo "$red Updating /boot/config.txt - Enabling Speed Hacks $white"
-        #sudo sed -i -e '$aforce_turbo=1' /boot/config.txt
-	#sudo sed '/console/ s/$/ quiet loglevel=3 console=tty3/' /boot/cmdline.txt
         cat /home/pi/Defcon28-Badge/boot_hacks | sudo tee -a /boot/config.txt > /dev/null
-	#sudo systemctl disable ntp.service
 	#sudo systemctl disable triggerhappy.service
 	sudo systemctl disable dphys-swapfile.service
 	sudo systemctl disable keyboard-setup.service
@@ -156,7 +153,6 @@ if ! grep -q "DCZia_Hackz" /boot/config.txt; then
 	sudo systemctl disable raspi-config.service
 	sudo systemctl disable avahi-daemon.service
         sudo systemctl disable rsyslog.service
-	sudo systemctl disable systemd-timesyncd.service
 else
 	echo "$blu DCZIa Speed Hacks Enabled $white" 
 fi
@@ -165,15 +161,7 @@ if ! grep -q "quiet" /boot/cmdline.txt; then
 
 	echo "$red Setting up console $white"
 	echo "Set up main console turn on"
-    	if ! grep -q 'fbcon=map:10 fbcon=font:VGA8x8' /boot/cmdline.txt; then
-        	echo "Updating /boot/cmdline.txt"
-        	sudo sed -i 's/rootwait/rootwait fbcon=map:10 fbcon=font:VGA8x8/g' "/boot/cmdline.txt"
-    	else
-        	echo "/boot/cmdline.txt already updated"
-    	fi
-
 	sudo sed -i -e '/console/ s/$/ quiet loglevel=3 console=tty3/' /boot/cmdline.txt
-
 fi
 
 echo ""
