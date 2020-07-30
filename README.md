@@ -66,7 +66,15 @@ Cheap mode (aka i already have a pi but dont want to buy a screen)
   
 ### Build Script
 
-Download Raspbian Buster Lite (https://downloads.raspberrypi.org/raspios_lite_armhf_latest), burn it to an sd card, [enable networking](#wifi-setup), boot it, clone our git repo, and run the dczia_setup.sh script. Reboot and you should be good!
+* Download Raspbian Buster Lite (https://downloads.raspberrypi.org/raspios_lite_armhf_latest)
+* Burn it to an sd card (using balenaEtcher, dd, etc...
+* [enable networking](#wifi-setup)
+* Boot it, login with the default raspbian user: Pi password: Raspbian
+* Change your password with passwd
+* Install git: sudo apt-get install git
+* Clone our git repo: git clone https://github.com/dczia/Defcon28-Badge.git
+* Run the dczia_setup.sh script inside our repo 
+* Reboot and you should be good! Screen will be white while booting.
 
 Still a work in progress. Currently it supports our PiBadge 1/2 screen the Adafruti PiTFT 3.5", and the WaveShare 1.44" LCD. Shoudl work on a Pi Zero, Pi Zero W, Pi A, and Pi B.
   
