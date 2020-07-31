@@ -168,7 +168,7 @@ echo ""
 #########################################
 #### Sets new hostname
 host_name=pibadgemini
-sudo echo $host_name | tee /etc/hostname
+sudo echo $host_name | sudo tee /etc/hostname
 sudo sed -i -E 's/^127.0.1.1.*/127.0.1.1\t'"$host_name"'/' /etc/hosts
 #hostnamectl set-hostname $host_name
 
