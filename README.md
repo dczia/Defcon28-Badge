@@ -69,7 +69,7 @@ Cheap mode (aka i already have a pi but dont want to buy a screen)
 * Download Raspbian Buster Lite (https://downloads.raspberrypi.org/raspios_lite_armhf_latest)
 * Burn it to an sd card (using balenaEtcher, dd, etc...
 * [enable networking](#wifi-setup)
-* Boot it, login with the default raspbian user: Pi password: Raspbian
+* Boot it, login with the default raspbian user: pi password: raspberry
 * Change your password with passwd
 * Install git: sudo apt-get install git
 * Clone our git repo: git clone https://github.com/dczia/Defcon28-Badge.git
