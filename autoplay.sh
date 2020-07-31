@@ -15,7 +15,7 @@ PLAYLIST="${1}"
 clear > /dev/tty1
 
 if [[ -z "${PLAYLIST}" || "${PLAYLIST}" == "TEST" ]] ; then
-  omxplayer --loop --no-osd -z -b --no-keys --aspect-mode stretch /home/pi/Defcon28-Badge/videos/ellctor_loop.mp4 > /dev/null 2>&1 & 
+  omxplayer --loop --no-osd -z --no-keys --aspect-mode stretch /home/pi/Defcon28-Badge/videos/ellctor_loop.mp4 > /dev/null 2>&1 & 
   clear > /dev/tty1
 
 elif [[ "${PLAYLIST}" == "DEFAULT" ]] ; then
@@ -41,11 +41,12 @@ elif [[ "${PLAYLIST}" == "C64" ]] ; then
   omxplayer --loop --fps 24 --no-osd -z --aspect-mode stretch /home/pi/Defcon28-Badge/videos/DC64.mp4 &
 
 elif [[ "${PLAYLIST}" == "DCZIA" ]] ; then
-  omxplayer --loop --no-osd -z -b --no-keys --aspect-mode stretch /home/pi/Defcon28-Badge/videos/dczia2020.m4v > /dev/null 2>&1 & 
+  clear > /dev/tty1
+  omxplayer --loop --no-osd -z --no-keys --aspect-mode stretch /home/pi/Defcon28-Badge/videos/dczia2020.m4v > /dev/null 2>&1 & 
 
 elif [[ "${PLAYLIST}" == "ALL" ]] ; then
   echo "ALL"
   clear > /dev/tty1
-  for a in /home/pi/Defcon28-Badge/videos/* ; do omxplayer --no-osd -z -b --no-keys --aspect-mode stretch $a > /dev/null 2>&1 ; clear > /dev/tty1 ; done
+  for a in /home/pi/Defcon28-Badge/videos/* ; do omxplayer --no-osd -z --no-keys --aspect-mode stretch $a > /dev/null 2>&1 ; clear > /dev/tty1 ; done
 fi
 
