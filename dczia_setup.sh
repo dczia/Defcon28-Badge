@@ -91,6 +91,7 @@ sudo apt-get -y update
 #sudo apt-get upgrade
 sudo apt-get -y install omxplayer cmake vim git chocolate-doom
 git clone https://github.com/juj/fbcp-ili9341.git
+git lfs fetch
 echo ""
 
 ###############################
