@@ -160,7 +160,6 @@ fi
 if ! grep -q "quiet" /boot/cmdline.txt; then
 
 	echo "$red Setting up console $white"
-	echo "Set up main console turn on"
 	sudo sed -i -e '/console/ s/$/ quiet loglevel=3 console=tty3/' /boot/cmdline.txt
 fi
 
