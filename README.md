@@ -78,7 +78,7 @@ Cheap mode (aka i already have a pi but dont want to buy a screen)
 * Run the dczia_setup.sh script inside our repo 
 * Reboot and you should be good! Screen will be white while booting.
 * New hostname will be: pibadgemini 
-* user: pi pass: dczia
+* Log in with User: pi Pass: dczia2020
 
 Still a work in progress. Currently it supports our PiBadge 1/2 screen the Adafruti PiTFT 3.5", and the WaveShare 1.44" LCD. Shoudl work on a Pi Zero, Pi Zero W, Pi A, and Pi B.
   

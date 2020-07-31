@@ -90,6 +90,8 @@ echo ""
 sudo apt-get -y update
 #sudo apt-get upgrade
 sudo apt-get -y install omxplayer cmake vim git git-lfs chocolate-doom
+wget http://www.doomworld.com/3ddownloads/ports/shareware_doom_iwad.zip
+unzip shareware_doom_iwad.zip
 git clone https://github.com/juj/fbcp-ili9341.git
 #git lfs fetch
 git checkout .
@@ -176,7 +178,7 @@ sudo sed -i -E 's/^127.0.1.1.*/127.0.1.1\t'"$host_name"'/' /etc/hosts
 
 #########################################
 #### Change Password
-#echo 'pi:dczia' | chpasswd
+echo -e "raspberry\ndczia2020\ndczia2020" | passwd pi
 
 #########################################
 #### So Long And Thanks For All The Fish!
