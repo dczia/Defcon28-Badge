@@ -89,7 +89,7 @@ echo ""
 
 sudo apt-get -y update
 #sudo apt-get upgrade
-sudo apt-get -y install omxplayer cmake vim git 
+sudo apt-get -y install omxplayer cmake vim git chocolate-doom
 git clone https://github.com/juj/fbcp-ili9341.git
 echo ""
 
@@ -164,6 +164,17 @@ if ! grep -q "quiet" /boot/cmdline.txt; then
 fi
 
 echo ""
+
+#########################################
+#### Sets new hostname
+host_name=pibadgemini
+echo $host_name | tee /etc/hostname
+sed -i -E 's/^127.0.1.1.*/127.0.1.1\t'"$host_name"'/' /etc/hosts
+hostnamectl set-hostname $host_name
+
+#########################################
+#### Change Password
+echo 'pi:dczia' | chpasswd
 
 #########################################
 #### So Long And Thanks For All The Fish!

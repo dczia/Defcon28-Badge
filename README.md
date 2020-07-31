@@ -15,7 +15,7 @@ This year was crazy, so our origianl plan never happened. Howerever we wanted to
 
 DCZia would like to present the PiBadge Mini: A Raspberry Pi Zero W with a Waveshare 1.44" LCD Display. We wrote a custom image for the Pi that will auto play some open source and in house made videos. 
 
-#### *Please Note this build guide is not complete - Come back 7/30 for final instructions but you can order hardware now!*
+### Build Guide Almost Done -- Check back Saturday 8/1
 
 ## Build Guide
 
@@ -67,7 +67,7 @@ Cheap mode (aka i already have a pi but dont want to buy a screen)
 ### Build Script
 
 * Download Raspbian Buster Lite (https://downloads.raspberrypi.org/raspios_lite_armhf_latest)
-* Burn it to an sd card (using balenaEtcher, dd, etc...
+* Burn it to an sd card (using balenaEtcher, dd, etc...)
 * [enable networking](#wifi-setup)
 * Boot it, login with the default raspbian user: pi password: raspberry
 * Change your password with passwd
@@ -94,10 +94,18 @@ Pi Shop also carries the Pi Zero W with and without headers: https://www.pishop.
 
 Hyperpixel Cases: https://www.thingiverse.com/search?q=Hyperpixel&type=things&sort=relevant&page=2
 
+* Install base raspbian 
+* Install hyperpixel drivers: curl https://get.pimoroni.com/hyperpixel4 | bash
+* Clone the repo
+* Copy this to /etc/rc.local before the exit 0: sudo /home/pi/Defcon28-Badge/autoplay.sh DCZIA
+* Done, hopefully
+
 ### Cases
 Coming Soon!
 
 ## Troubleshooting
+For now you need to clone the repo into the pi users home directory as paths are hardcoded. I know, i know...
+
 
 ### WiFi Setup
 If you want to configure your pi to have network access there are two way to do it:
