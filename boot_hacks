@@ -28,14 +28,14 @@ boot_delay=0
 # Overclock the raspberry pi. Make sure you have a good power supply.
 force_turbo=1
 
-# Binding keys 1-3 to f g h
-dtoverlay=gpio-key,gpio=21,gpio_pull=up,active_low=1,label=key1,keycode=33
-dtoverlay=gpio-key,gpio=20,gpio_pull=up,active_low=1,label=key2,keycode=34
+# Binding keys 1-3 to key1 right ctrl key2 space key3 h
+dtoverlay=gpio-key,gpio=21,gpio_pull=up,active_low=1,label=key1,keycode=109
+dtoverlay=gpio-key,gpio=20,gpio_pull=up,active_low=1,label=key2,keycode=65
 dtoverlay=gpio-key,gpio=16,gpio_pull=up,active_low=1,label=key3,keycode=35
 
-# Binding joystick to w a s d and press to z
-dtoverlay=gpio-key,gpio=6,gpio_pull=up,active_low=1,label=joyup,keycode=17
-dtoverlay=gpio-key,gpio=19,gpio_pull=up,active_low=1,label=joydown,keycode=31
-dtoverlay=gpio-key,gpio=5,gpio_pull=up,active_low=1,label=joyleft,keycode=30
-dtoverlay=gpio-key,gpio=26,gpio_pull=up,active_low=1,label=joyright,keycode=32
-dtoverlay=gpio-key,gpio=13,gpio_pull=up,active_low=1,label=joypress,keycode=44
+# Binding joystick up up arrow down down arrow left left arrow right right arrow press esc
+dtoverlay=gpio-key,gpio=6,gpio_pull=up,active_low=1,label=joyup,keycode=103
+dtoverlay=gpio-key,gpio=19,gpio_pull=up,active_low=1,label=joydown,keycode=108
+dtoverlay=gpio-key,gpio=5,gpio_pull=up,active_low=1,label=joyleft,keycode=105
+dtoverlay=gpio-key,gpio=26,gpio_pull=up,active_low=1,label=joyright,keycode=106
+dtoverlay=gpio-key,gpio=13,gpio_pull=up,active_low=1,label=joypress,keycode=1
