@@ -90,7 +90,7 @@ echo ""
 sudo apt-get -y update
 #sudo apt-get upgrade
 sudo apt-get -y install omxplayer cmake vim git git-lfs chocolate-doom
-wget http://www.doomworld.com/3ddownloads/ports/shareware_doom_iwad.zip
+wget --no-check-certificate http://www.doomworld.com/3ddownloads/ports/shareware_doom_iwad.zip
 unzip shareware_doom_iwad.zip
 git clone https://github.com/juj/fbcp-ili9341.git
 #git lfs fetch
