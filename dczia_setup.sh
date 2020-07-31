@@ -168,13 +168,13 @@ echo ""
 #########################################
 #### Sets new hostname
 host_name=pibadgemini
-echo $host_name | tee /etc/hostname
-sed -i -E 's/^127.0.1.1.*/127.0.1.1\t'"$host_name"'/' /etc/hosts
-hostnamectl set-hostname $host_name
+sudo echo $host_name | tee /etc/hostname
+sudo sed -i -E 's/^127.0.1.1.*/127.0.1.1\t'"$host_name"'/' /etc/hosts
+#hostnamectl set-hostname $host_name
 
 #########################################
 #### Change Password
-echo 'pi:dczia' | chpasswd
+#echo 'pi:dczia' | chpasswd
 
 #########################################
 #### So Long And Thanks For All The Fish!
