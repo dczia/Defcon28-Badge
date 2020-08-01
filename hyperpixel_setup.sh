@@ -85,17 +85,10 @@ sudo apt-get -y update
 sudo apt-get -y install omxplayer cmake vim git git-lfs chocolate-doom
 wget --no-check-certificate http://www.doomworld.com/3ddownloads/ports/shareware_doom_iwad.zip
 unzip shareware_doom_iwad.zip
-git lfs fetch
+wget https://dczia.s3-us-west-2.amazonaws.com/dczia2020_w.m4v
+mv dczia2020_w.m4v videos
 echo ""
 
-###############################
-#### Setup TFT Screen Drivers
-###############################
-### NEED TO CHECK CMD LINE OPTION AND FORK HERE FOR EACH SCREEN TYPE
-### Adafruit PiTFT 3.5
-
-curl https://get.pimoroni.com/hyperpixel4 | bash
-echo ""
 
 ###############################
 #### System Setup Stuff
@@ -143,6 +136,7 @@ echo ""
 
 #########################################
 #### Sets new hostname
+#########################################
 host_name=pibadgemini
 sudo echo $host_name | sudo tee /etc/hostname
 sudo sed -i -E 's/^127.0.1.1.*/127.0.1.1\t'"$host_name"'/' /etc/hosts
@@ -150,9 +144,19 @@ sudo sed -i -E 's/^127.0.1.1.*/127.0.1.1\t'"$host_name"'/' /etc/hosts
 
 #########################################
 #### Change Password
+#########################################
 echo -e "raspberry\ndczia2020\ndczia2020" | passwd pi
+
+
+###############################
+#### Setup TFT Screen Drivers
+###############################
+
+curl https://get.pimoroni.com/hyperpixel4 | bash
+echo ""
 
 #########################################
 #### So Long And Thanks For All The Fish!
+#########################################
 printf -- '\n';
 exit 0;

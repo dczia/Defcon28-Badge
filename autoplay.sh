@@ -44,6 +44,10 @@ elif [[ "${PLAYLIST}" == "DCZIA" ]] ; then
   clear > /dev/tty1
   omxplayer --loop --no-osd -z --no-keys --aspect-mode stretch /home/pi/Defcon28-Badge/videos/dczia2020.m4v > /dev/null 2>&1 & 
 
+elif [[ "${PLAYLIST}" == "DCZIA_W" ]] ; then
+  clear > /dev/tty1
+  omxplayer --loop --no-osd -z --no-keys --aspect-mode stretch /home/pi/Defcon28-Badge/videos/dczia2020_wide.m4v > /dev/null 2>&1 & 
+
 elif [[ "${PLAYLIST}" == "ALL" ]] ; then
   echo "ALL"
   clear > /dev/tty1

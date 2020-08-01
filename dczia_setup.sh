@@ -95,6 +95,8 @@ wget --no-check-certificate http://www.doomworld.com/3ddownloads/ports/shareware
 unzip shareware_doom_iwad.zip
 git clone https://github.com/juj/fbcp-ili9341.git
 git lfs fetch
+wget https://dczia.s3-us-west-2.amazonaws.com/dczia2020.m4v
+mv dczia2020.mv4 videos
 echo ""
 
 ###############################
