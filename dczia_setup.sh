@@ -42,6 +42,7 @@ case $opt in
       echo "Halp: -D DISPLAY_VAR " >&2
       echo "Currently supported: " >&2
       echo "  WAVESHARE - Waveshare 1.44 ST7735S (default)" >&2
+      echo "  WAVESHARE13 - Waveshare 1.4 ST7789VW" >&2
       echo "  HX8357D - Adafruit PiTFT 3.5" >&2
       echo "  ILI9341 - Adafruit 2.8 TFT" >&2
       exit 1
@@ -113,6 +114,10 @@ elif [[ "${DISPVAR}" == "ILI9341" ]] ; then
     DISPTYPE="-DADAFRUIT_ILI9341_PITFT=ON"
     echo "$red Installing fbcp-ili9341 Driver for Adafruit 2.8$white"
     cmake "${DISPTYPE}" -DDISPLAY_ROTATE_180_DEGREES=ON -DSTATISTICS=0 -DSPI_BUS_CLOCK_DIVISOR=6 ..
+elif [[ "${DISPVAR}" == "WAVESHARE13" ]] ; then
+    DISPTYPE="-DWAVESHARE_ST7789VW_HAT=ON"
+    echo "$red Installing fbcp-ili9341 Driver for Waveshare 1.3$white"
+    cmake "${DISPTYPE}" -DDISPLAY_ROTATE_180_DEGREES=OFF -DSTATISTICS=0 -DSPI_BUS_CLOCK_DIVISOR=14 -DDISPLAY_CROPPED_INSTEAD_OF_SCALING=OFF -DDISPLAY_BREAK_ASPECT_RATIO_WHEN_SCALING=ON ..
 elif [[ "${DISPVAR}" == "WAVESHARE" ]] ; then
     DISPTYPE="-DWAVESHARE_ST7735S_HAT=ON"
     echo "$red Installing fbcp-ili9341 Driver for Waveshare 1.44$white"
