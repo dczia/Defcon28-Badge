@@ -9,23 +9,27 @@ Pi Badge Mini
 Build a badge with us!
 
 Credits
-Design: Lithochasm
-Code: Lithochasm, Toasty, babdor
-GFX: Sourced from Beeple and other open-source clips, mixed by Lithochasm
-Imgs / Challenge: Syntax, Luna
-Stickets: WillyK
+Design: LithoChasm & DCZia
+Code: Lithochasm, Toasty, Babdor
+Challenge: Syntax, Luna
+Stickers: WillyK
 Case: Syntax
-Stand: babdor
+Stand: Babdor
+Assistant to the Regional Manager: Bob
+Markdown Engineers: Beardbyte, Luna, Lithochasm
 
 ____ _  _ ____ _  _ ___ ____ _  _ ___ ____ 
 [__  |__| |  | |  |  |  |  | |  |  |  [__  
 ___] |  | |__| |__|  |  |__| |__|  |  ___] 
                                            
 Everyone in DCZia
+the #badgelife crew
 And!Xor
-Aask
-MediumRehr
+Internet of Batteries
+MalortWare
+DC801
 1o57
+all the other hackers and makers out there
 and DEFCON 28!
 
 
