@@ -1,0 +1,27 @@
+ ____   ____ ______         ____   ___ ____   ___
+|  _ \ / ___|__  (_) __ _  |___ \ / _ \___ \ / _ \
+| | | | |     / /| |/ _` |   __) | | | |__) | | | |
+| |_| | |___ / /_| | (_| |  / __/| |_| / __/| |_| |
+|____/ \____/____|_|\__,_| |_____|\___/_____|\___/
+
+DCZia 2020
+Pi Badge Mini
+
+Credits
+Design: Lithochasm
+Code: Lithochasm, Toasty, babdoor
+GFX: Sourced from Beeple and other open-source clips, mixed by Lithochasm
+Imgs / Challenge: Syntax, Luna
+Stickets: WillyK
+Case: Syntax
+
+____ _  _ ____ _  _ ___ ____ _  _ ___ ____ 
+[__  |__| |  | |  |  |  |  | |  |  |  [__  
+___] |  | |__| |__|  |  |__| |__|  |  ___] 
+                                           
+Everyone in DCZia!
+And!Xor
+Aask
+MediumRehr
+1o57
+DEFCON 28
