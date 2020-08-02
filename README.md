@@ -80,7 +80,7 @@ Cheap mode (aka i already have a pi but dont want to buy a screen)
 * New hostname will be: pibadgemini 
 * Log in with User: pi Pass: dczia2020
 
-Still a work in progress. Currently it supports our PiBadge 1/2 screen the Adafruti PiTFT 3.5", and the WaveShare 1.44" LCD. Shoudl work on a Pi Zero, Pi Zero W, Pi A, and Pi B.
+Currently it supports our PiBadge 1/2 screen the Adafruti PiTFT 3.5", and the WaveShare 1.44" LCD. Shoudl work on a Pi Zero, Pi Zero W, Pi A, and Pi B.
   
 ## Alternative Options
 
@@ -98,6 +98,9 @@ Pi Shop also carries the Pi Zero W with and without headers: https://www.pishop.
 
 Hyperpixel Cases: https://www.thingiverse.com/search?q=Hyperpixel&type=things&sort=relevant&page=2
 
+Run the hyperpixel_setup.sh script to install!
+
+Manual Install Option
 * Install base raspbian 
 * Install hyperpixel drivers: curl https://get.pimoroni.com/hyperpixel4 | bash
 * Clone the repo
@@ -105,10 +108,13 @@ Hyperpixel Cases: https://www.thingiverse.com/search?q=Hyperpixel&type=things&so
 * Done, hopefully
 
 ### Cases
-Coming Soon!
+See the cases folder. Syntax remixed a case design to allow your badge to be protected with an optional lid. babdor also made a Zia shaped desk stand for your PiBadge.
 
 ## Troubleshooting
-For now you need to clone the repo into the pi users home directory as paths are hardcoded. I know, i know...
+* For now you need to clone the repo into the pi users home directory as paths are hardcoded. I know, i know...
+* If you see the worlds tiniest console on your pi you are likely missing the video. Check if dczia2020.m4v is in the videos folder.
+* If your screen stays white check that fbcp-ili9341 is running, this is the LCD driver. (ps -ef | grep fbcp)
+  * If it is running and your screen is still white, check your soldering if you soldered on the headers. 
 
 
 ### WiFi Setup
