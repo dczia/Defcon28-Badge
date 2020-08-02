@@ -13,8 +13,6 @@
 ## Shoutout to the DCZia Crew
 ##
 ##
-##
-##
 ####################################################
 
 
@@ -73,7 +71,7 @@ echo "  ___   ___ _____"
 echo " |   \\ / __|_  (_)__ _"
 echo " | |) | (__ / /| / _\` | "
 echo " |___/ \\___/___|_\\__,_| "
-echo " $red DCzia Badge Setup v1 $white"
+echo " $red DCzia Badge Setup v2 $white"
 echo ""
 
 ###############################
@@ -96,7 +94,7 @@ unzip shareware_doom_iwad.zip
 git clone https://github.com/juj/fbcp-ili9341.git
 git lfs fetch
 wget https://dczia.s3-us-west-2.amazonaws.com/dczia2020.m4v
-mv dczia2020.mv4 videos
+mv dczia2020.m4v videos
 echo ""
 
 ###############################
