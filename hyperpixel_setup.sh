@@ -119,16 +119,12 @@ if ! grep -q "DCZia_Hackz" /boot/config.txt; then
         #cat /home/pi/Defcon28-Badge/boot_hacks | sudo tee -a /boot/config.txt > /dev/null
 	#sudo sed -i -e '$a gpu_mem=64' /boot/config.txt
 	#sudo sed -i -e '$a disable_overscan=1' /boot/config.txt
-	sudo sed -i -e '$a hdmi_force_hotplug=1' /boot/config.txt
-	sudo sed -i -e '$a hdmi_drive=2' /boot/config.txt
-	sudo sed -i -e '$a hdmi_group=1' /boot/config.txt
-	sudo sed -i -e '$a hdmi_mode=16' /boot/config.txt
-	#sudo sed -i -e '$a disable_splash=1' /boot/config.txt
+	sudo sed -i -e '$a disable_splash=1' /boot/config.txt
 	sudo sed -i -e '$a dtoverlay=sdtweak,overclock_50=84' /boot/config.txt
-	#sudo sed -i -e '$a boot_delay=0' /boot/config.txt
+	sudo sed -i -e '$a boot_delay=0' /boot/config.txt
 	sudo sed -i -e '$a force_turbo=1' /boot/config.txt
 	#sudo systemctl disable triggerhappy.service
-	#sudo systemctl disable dphys-swapfile.service
+	sudo systemctl disable dphys-swapfile.service
 	#sudo systemctl disable keyboard-setup.service
 	#sudo systemctl disable apt-daily.service
 	#sudo systemctl disable wifi-country.service
