@@ -95,6 +95,8 @@ git clone https://github.com/juj/fbcp-ili9341.git
 git lfs fetch
 wget https://dczia.s3-us-west-2.amazonaws.com/dczia2020.m4v
 mv dczia2020.m4v videos
+wget https://dczia.s3-us-west-2.amazonaws.com/L00t.7z
+mv L00t.7z extras
 echo ""
 
 ###############################

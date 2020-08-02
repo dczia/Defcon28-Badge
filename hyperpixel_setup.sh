@@ -86,7 +86,9 @@ sudo apt-get -y install omxplayer cmake vim git git-lfs chocolate-doom
 wget --no-check-certificate http://www.doomworld.com/3ddownloads/ports/shareware_doom_iwad.zip
 unzip shareware_doom_iwad.zip
 wget https://dczia.s3-us-west-2.amazonaws.com/dczia2020.m4v
-mv dczia2020_w.m4v videos
+mv dczia2020.m4v videos
+wget https://dczia.s3-us-west-2.amazonaws.com/L00t.7z
+mv L00t.7z extras
 echo ""
 
 

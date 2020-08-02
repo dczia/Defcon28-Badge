@@ -17,6 +17,7 @@ Case: Syntax
 Stand: Babdor
 Assistant to the Regional Manager: Bob
 Markdown Engineers: Beardbyte, Luna, Lithochasm
+Background music while coding: Devin Townsend
 
 ____ _  _ ____ _  _ ___ ____ _  _ ___ ____ 
 [__  |__| |  | |  |  |  |  | |  |  |  [__  
