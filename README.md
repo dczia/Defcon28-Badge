@@ -64,7 +64,8 @@ Cheap mode (aka i already have a pi but dont want to buy a screen)
 ## Software Setup Guide
 
 ### Official DCZia Raspbian / Debian Buster Image
-  Coming soon!
+  * Download the image and burn it using balenaEtcher or similar tool such as dd.
+  * https://dczia.s3-us-west-2.amazonaws.com/dczia2020.img.zip
   
 ### Build Script
 
