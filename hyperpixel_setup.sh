@@ -68,6 +68,8 @@ echo " |___/ \\___/___|_\\__,_| "
 echo " $red DCzia Badge Setup v1 $white"
 echo ""
 
+echo "$red Please install the hyperpixel display drivers first!"
+echo "curl https://get.pimoroni.com/hyperpixel4 | bash $white"
 ###############################
 #### Check if we have internet
 ###############################
@@ -117,13 +119,13 @@ if ! grep -q "DCZia_Hackz" /boot/config.txt; then
         cat /home/pi/Defcon28-Badge/boot_hacks | sudo tee -a /boot/config.txt > /dev/null
 	#sudo systemctl disable triggerhappy.service
 	sudo systemctl disable dphys-swapfile.service
-	sudo systemctl disable keyboard-setup.service
-	sudo systemctl disable apt-daily.service
-	sudo systemctl disable wifi-country.service
-	sudo systemctl disable hciuart.service
-	sudo systemctl disable raspi-config.service
-	sudo systemctl disable avahi-daemon.service
-        sudo systemctl disable rsyslog.service
+	#sudo systemctl disable keyboard-setup.service
+	#sudo systemctl disable apt-daily.service
+	#sudo systemctl disable wifi-country.service
+	#sudo systemctl disable hciuart.service
+	#sudo systemctl disable raspi-config.service
+	#sudo systemctl disable avahi-daemon.service
+        #sudo systemctl disable rsyslog.service
 else
 	echo "$blu DCZIa Speed Hacks Enabled $white" 
 fi
@@ -154,7 +156,7 @@ echo -e "raspberry\ndczia2020\ndczia2020" | passwd pi
 #### Setup TFT Screen Drivers
 ###############################
 
-curl https://get.pimoroni.com/hyperpixel4 | bash
+#curl https://get.pimoroni.com/hyperpixel4 | bash
 echo ""
 
 #########################################
