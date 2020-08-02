@@ -99,14 +99,14 @@ Pi Shop also carries the Pi Zero W with and without headers: https://www.pishop.
 
 Hyperpixel Cases: https://www.thingiverse.com/search?q=Hyperpixel&type=things&sort=relevant&page=2
 
-Run the hyperpixel_setup.sh script to install!
-
-Manual Install Option
+Manual Install:
 * Install base raspbian 
 * Install hyperpixel drivers: curl https://get.pimoroni.com/hyperpixel4 | bash
+* Set rotation after drivers are installed and before reboot: hyperpixel-rotate right
+* Reboot
 * Clone the repo
-* Copy this to /etc/rc.local before the exit 0: sudo /home/pi/Defcon28-Badge/autoplay.sh DCZIA
-* Done, hopefully
+* Run the hyperpixel_setup.sh scrip to pull down the videos and install software. 
+* Reboot!
 
 ### Cases
 See the cases folder. Syntax remixed a case design to allow your badge to be protected with an optional lid. babdor also made a Zia shaped desk stand for your PiBadge.
